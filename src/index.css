@@ -1,0 +1,10 @@
+.floating-navbar {
+  z-index: 1030; /* Ensure it is above other content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}

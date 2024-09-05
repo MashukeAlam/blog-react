@@ -1,0 +1,45 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.blog-single {
+  position: relative;
+  font-family: "SUSE", sans-serif;
+}
+
+.blog-single::after, .blog-single::before {
+  content: " ";
+  position: absolute;
+  background-image: conic-gradient(from var(--angle),
+    rgb(233, 128, 128), 
+    rgb(233, 179, 128), 
+    rgb(240, 195, 112), 
+    rgb(197, 255, 142), 
+    rgb(118, 255, 118), 
+    rgb(181, 181, 255), 
+    rgb(134, 134, 240), 
+    rgb(233, 128, 128)/* You can repeat the first color to complete the cycle */
+  );  height: calc(100% + 5px);
+  width: calc(100% + 5px);
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); /* Ensure it's centered */
+  z-index: -1;
+  border-radius: 5px;
+  animation: 08s spin linear infinite;
+}
+
+.blog-single::before {
+  filter: blur(1.5rem);
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
